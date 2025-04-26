@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Management</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <h1>Event Management</h1>
+    <p>Discover and Register for Events</p>
+  </div>
+
+  <div class="container my-5">
+    <!-- Tabs for Event Types -->
+    <ul class="nav nav-tabs" id="eventTabs" role="tablist">
+      <li class="nav-item">
+        <button class="nav-link active" id="workshops-tab" data-bs-toggle="tab" data-bs-target="#workshops" type="button" role="tab" aria-controls="workshops" aria-selected="true">Workshops</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" id="conferences-tab" data-bs-toggle="tab" data-bs-target="#conferences" type="button" role="tab" aria-controls="conferences" aria-selected="false">Conferences</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" id="webinars-tab" data-bs-toggle="tab" data-bs-target="#webinars" type="button" role="tab" aria-controls="webinars" aria-selected="false">Webinars</button>
+      </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content mt-4">
+      <!-- Workshops -->
+      <div class="tab-pane fade show active" id="workshops" role="tabpanel" aria-labelledby="workshops-tab">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">React Bootcamp</h5>
+            <p class="card-text">Date: May 12, 2025 | Location: Online</p>
+            <p class="card-text">Learn the principles of modern design and user experience.</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conferences -->
+      <div class="tab-pane fade" id="conferences" role="tabpanel" aria-labelledby="conferences-tab">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Global Tech Conference</h5>
+            <p class="card-text">Date: June 20, 2025 | Location: NYC Convention Center</p>
+            <p class="card-text">Join innovators and leaders from the tech world for a full-day event.</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Webinars -->
+      <div class="tab-pane fade" id="webinars" role="tabpanel" aria-labelledby="webinars-tab">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Machine Learning Webinar</h5>
+            <p class="card-text">Date: July 15, 2025 | Location: Online</p>
+            <p class="card-text">Explore the latest trends and advancements in machine learning.</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <h3 class="mt-5">Frequently Asked Questions</h3>
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+            How do I get my ticket?
+          </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Click the "Register" button for your chosen event and fill out the form.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+            Will I get a confirmation email?
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Yes, once you register, a confirmation email will be sent to you.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+            can I Cancel my Registration?
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Yes, you can cancel your registration through the confirmation email link provided..</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Registration Form -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registerModalLabel">Event Registration</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" class="form-control mb-3" placeholder="Full Name" required />
+          <input type="email" class="form-control mb-3" placeholder="Email Address" required />
+          <select class="form-select mb-3" required>
+            <option value="">Select Ticket Type</option>
+            <option value="general">General Admission</option>
+            <option value="vip">VIP</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Submit Registration</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 EventMaster. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="project.js"></script>
+</body>
+</html>
